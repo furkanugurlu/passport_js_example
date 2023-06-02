@@ -1,0 +1,35 @@
+<% if(flashSuccess.length> 0) { %>
+    <div class="alert alert-info">
+        <%= flashSuccess %>
+    </div>
+    <% } %>
+
+        <% if(passportSuccess.length> 0) { %>
+            <div class="alert alert-info">
+                <%= passportSuccess %>
+            </div>
+            <% } %>
+
+                <div class="card">
+                    <h5 class="card-header">Registered Users</h5>
+                    <div class="body">
+                        <ul class="list-group">
+                            <% if(users.length > 0 ) { %>
+                                <% users.forEach((item)=> { %>
+                                    <li class="list-group-item">
+                                        <%= item.username %>
+                                    </li>
+                                    <% }); %>
+                                        <% } else {%>
+                                            <div class="alert alert-danger m-3">There is No Registered
+                                                Users!</div>
+                                            <% } %>
+                        </ul>
+                    </div>
+
+                    <% if(user) { %>
+                        <h4 class="m-2">
+                            Aktif Kullanıcı: <%- user.username%>
+                        </h4>
+                        <% } %>
+                </div>
